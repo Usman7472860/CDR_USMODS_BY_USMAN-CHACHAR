@@ -1,0 +1,342 @@
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>SYSTEM BREACH</title> 
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=VT323&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: #ff003c;
+            font-family: 'Orbitron', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%23ff003c'/></svg>"), auto;
+        }
+        
+        .alert-box {
+            position: relative;
+            max-width: 320px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff003c;
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 10;
+            animation: glitch 3s linear infinite;
+            border-radius: 5px;
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff003c;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
+            letter-spacing: 3px;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #ff3366;
+        }
+        
+        .hacker-name {
+            color: #ff003c;
+            font-weight: bold;
+            font-size: 2rem;
+            display: inline-block;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.7);
+        }
+        
+        .hacker-name::after {
+            content: "";
+            animation: blink 0.7s infinite;
+            position: absolute;
+            right: -10px;
+            color: #ff003c;
+        }
+        
+        .input-box {
+            color: black;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: red;
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 0;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 0, 60, 0.9);
+        }
+        
+        .search-box {
+            display: flex;
+            flex-direction: column; /* Changed to column layout */
+            align-items: center; /* Center items horizontally */
+            color: black;
+            margin-bottom: 20px;
+        }
+        
+        .search-box input[type="text"] {
+            width: 100%; /* Full width */
+            color: black;
+            padding: 10px;
+            margin-bottom: 10px; /* Space between input and button */
+            border: 2px solid #333;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        
+        .search-box input[type="submit"] {
+            width: 100%; /* Full width */
+            padding: 10px 20px;
+            border: none;
+            background-color: red;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .search-box input[type="submit"]:hover {
+            background-color: #007BFF;
+        }
+        
+        .contact-btn:hover {
+            background-color: #007BFF;
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.9);
+        }
+        
+        /* Animations */
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* VIP Effects */
+        .vip-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .vip-corner {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ff003c;
+            opacity: 0.9;
+        }
+        
+        .top-left {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+            animation: pulse 2s infinite;
+        }
+        
+        .top-right {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+            animation: pulse 2s infinite 0.5s;
+        }
+        
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+            animation: pulse 2s infinite 1s;
+        }
+        
+        .bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+            animation: pulse 2s infinite 1.5s;
+        }
+        
+        .vip-line {
+            position: absolute;
+            background: #ff003c;
+            opacity: 0.5;
+            animation: scan 8s linear infinite;
+        }
+        
+        .horizontal-line {
+            height: 1px;
+            width: 100%;
+            left: 0;
+            box-shadow: 0 0 10px #ff003c;
+        }
+        
+        .vertical-line {
+            width: 1px;
+            height: 100%;
+            top: 0;
+            box-shadow: 0 0 10px #ff003c;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        /* Binary Rain Background */
+        .binary-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <!-- VIP Corner Effects --> 
+  <div class="vip-effect"> 
+   <div class="vip-corner top-left"></div> 
+   <div class="vip-corner top-right"></div> 
+   <div class="vip-corner bottom-left"></div> 
+   <div class="vip-corner bottom-right"></div> 
+   <!-- Scanning lines --> 
+   <div class="vip-line horizontal-line" style="top: 20%; animation-delay: 0s;"></div> 
+   <div class="vip-line horizontal-line" style="top: 40%; animation-delay: 2s;"></div> 
+   <div class="vip-line horizontal-line" style="top: 60%; animation-delay: 4s;"></div> 
+   <div class="vip-line horizontal-line" style="top: 80%; animation-delay: 6s;"></div> 
+   <div class="vip-line vertical-line" style="left: 20%; animation-delay: 1s;"></div> 
+   <div class="vip-line vertical-line" style="left: 40%; animation-delay: 3s;"></div> 
+   <div class="vip-line vertical-line" style="left: 60%; animation-delay: 5s;"></div> 
+   <div class="vip-line vertical-line" style="left: 80%; animation-delay: 7s;"></div> 
+  </div> 
+  <!-- Binary Rain Background --> 
+  <canvas id="binaryRain" class="binary-rain" width="360" height="705"></canvas> 
+  <div class="alert-box"> 
+   <meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <div class="container"> 
+    <h1>Sim Database</h1> 
+    <form class="search-box" method="post" action=""> 
+     <input type="text" name="search_id" placeholder="Enter Number" required> 
+     <input type="submit" value="Search"> 
+    </form> 
+   </div> 
+   <div class="hacker-name" id="tajammal-name">
+    T
+   </div> 
+  </div> 
+  <script>
+        // Binary Rain Background
+        const canvas = document.getElementById('binaryRain');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const binary = "01";
+        const cols = Math.floor(canvas.width / 15);
+        const drops = [];
+        
+        for (let i = 0; i < cols; i++) {
+            drops[i] = Math.random() * -100;
+        }
+        
+        function drawBinaryRain() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#ff003c';
+            ctx.font = '15px VT323';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = binary[Math.floor(Math.random() * binary.length)];
+                ctx.fillText(text, i * 15, drops[i] * 15);
+                
+                if (drops[i] * 15 > canvas.height || Math.random() > 0.99) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        
+        setInterval(drawBinaryRain, 33);
+    
+
+  // Tajammal Name Typing Effect
+        const nameElement = document.getElementById('tajammal-name');
+        const name = "Tajammal Mods";
+        let i = 0;
+        
+        function typeName() {
+            if (i < name.length) {
+                nameElement.textContent += name.charAt(i);
+                i++;
+                setTimeout(typeName, Math.random() * 300 + 100); // Random typing speed
+            } else {
+                // Randomly reset and retype for glitch effect
+                if (Math.random() > 0.95) {
+                    i = 0;
+                    nameElement.textContent = "";
+                    setTimeout(typeName, 500);
+                }
+            }
+        }
+        
+        // Start typing and glitch effects
+        typeName();
+        
+        // Random glitch effect on the name
+        setInterval(() => {
+            if (Math.random() > 0.9 && nameElement.textContent) {
+                const temp = nameElement.textContent;
+                nameElement.textContent = temp.split('').map(c => 
+                    Math.random() > 0.7 ? binary[Math.floor(Math.random() * 2)] : c
+                ).join('');
+                setTimeout(() => {
+                    nameElement.textContent = temp;
+                }, 200);
+            }
+        }, 1000);
+    </script> 
+ </body>
+</html>
